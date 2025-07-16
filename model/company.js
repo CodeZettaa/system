@@ -6,8 +6,8 @@ const companySchema = new Schema(
     company: { type: String, required: true },
     email: { type: String, required: true, unique: true },
 
-    country: { type: String, required: true, unique: true },
-    system: { type: String, required: true, unique: true },
+    country: { type: String, required: true },
+    system: { type: String, required: true },
     phone: { type: String },
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
