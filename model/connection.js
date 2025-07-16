@@ -1,10 +1,9 @@
-import mongoose from 'mongoose'
-
+import mongoose from "mongoose";
 
 const connect = () => {
-    mongoose.connect('mongodb://127.0.0.1:27017/test').then((res) => console.log('connetc'))
-
-}
-
+  mongoose
+    .connect("mongodb+srv://systemAdmin:system@cluster0.lri9y.mongodb.net/")
+    .then((res) => console.log("connetc"));
+};
 
 export default connect;
