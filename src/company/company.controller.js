@@ -1,8 +1,12 @@
 import companyModel from "../../model/company.js";
 
 const addCompany = async (req, res) => {
-  const company = await companyModel.insertMany(req.body);
-  res.json({ message: "Hi", company });
+  try {
+    const company = await companyModel.insertMany(req.body);
+    res.json({ message: "Hi", company });
+  } catch (error) {
+    res.status(400).json({ message: "error", error });
+  }
 };
 
 const getAll = async (req, res) => {
