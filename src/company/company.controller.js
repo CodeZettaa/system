@@ -10,8 +10,12 @@ const addCompany = async (req, res) => {
 };
 
 const getAll = async (req, res) => {
-  const compnies = await companyModel.find();
-  res.json({ message: "Hi", compnies });
+  try {
+    const compnies = await companyModel.find();
+    res.json({ message: "Hi", compnies });
+  } catch (error) {
+    res.status(400).json({ message: "error", error });
+  }
 };
 
 export { addCompany, getAll };
